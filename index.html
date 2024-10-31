@@ -66,7 +66,7 @@
       function copyScript(){
         const text = document.getElementById("result").value
         if (text === ""){
-          alert("Nothing to copy");
+          alert("Tiada apa nak di salin");
         }else{
           navigator.clipboard.writeText(text)
         }
@@ -75,7 +75,7 @@
           // Ambil input dari textarea
           const input = document.getElementById('textInput').value;
           if (input === ""){
-            alert("Tak kosong")
+            alert("Tak boleh kosong")
           }else{
           // Tukarkan setiap karakter kepada nilai ASCII
           const asciiArray = Array.from(input).map(char => char.charCodeAt(0));
