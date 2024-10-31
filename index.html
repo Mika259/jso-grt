@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON SCRIPT GENERATOR</title>
+    <style>
+      body{
+        background-color: #333;
+      }
+      .container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+      }
+      .title{
+          font-family: sans-serif;
+          color: antiquewhite;
+      }
+      .container textarea{
+        color: aliceblue;
+        background-color: rgb(28, 28, 28);
+        margin: auto;
+        display: block;
+        border: 3px solid #e2ea4d;
+        padding: 10px;
+        font-size: 16px;
+        resize: vertical;
+        max-width: 700px;
+        width: 90%;
+      }
+      .btn{
+        padding: 10px 40px;
+        border-radius: 45px;
+        cursor: pointer;
+        background-color: #2487ff;
+        color: antiquewhite;
+        font-weight: bold;
+        box-shadow: 0 2px 0 rgb(0, 31, 133);
+      }
+    </style>
+    <div class="container">
+      <h1 class="title">
+        JSO SCRIPT GENERATE
+      </h1>
+        <textarea onkeydown="handleTab(event)" id="textInput" placeholder="Masukkan anda script disini..." rows="10"></textarea>
+        <br>
+        <br>
+        <button class="btn" onclick="convertToDecimalAsciiArray()">GENERATE</button>
+    </div>
+<hr style="margin-top: 50px;">
+    <div class="container">
+      <h1 class="title">
+        OUTPUT
+      </h1>
+      <textarea onkeydown="handleTab(event)" id="result" placeholder="Output akan keluar disini..." rows="10"></textarea>
+      <br>
+      <button class="btn" onclick="copyScript()">COPY SCRIPT</button>
+      <br><br>
+    </div>
+    <footer>
+      <span>POWERED BY MIKA259</span>
+    </footer>
+    <script>
+      function copyScript(){
+        const text = document.getElementById("result").value
+        if (text === ""){
+          alert("Nothing to copy");
+        }else{
+          navigator.clipboard.writeText(text)
+        }
+      }
+      function convertToDecimalAsciiArray() {
+          // Ambil input dari textarea
+          const input = document.getElementById('textInput').value;
+          if (input === ""){
+            alert("Tak kosong")
+          }
+          // Tukarkan setiap karakter kepada nilai ASCII
+          const asciiArray = Array.from(input).map(char => char.charCodeAt(0));
+
+          // Paparkan hasil dalam konsol (atau anda boleh memaparkannya di halaman)
+          console.log(asciiArray);
+
+          // Anda boleh juga memaparkan di halaman
+          document.getElementById('result').innerHTML = `&lt;script&gt;document.documentElement.innerHTML = String.fromCharCode(${asciiArray.join(', ')});&lt;/script&gt;`
+      }
+
+      //tabs function
+      function handleTab(event) {
+            // Periksa jika tombol yang ditekan adalah Tab
+            if (event.key === 'Tab') {
+                event.preventDefault(); // Mencegah tindakan lalai Tab
+
+                // Dapatkan elemen textarea
+                const textarea = event.target;
+
+                // Dapatkan posisi semasa kursor
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+
+                // Tambah 4 ruang pada posisi kursor
+                const value = textarea.value;
+                textarea.value = value.substring(0, start) + '    ' + value.substring(end);
+
+                // Kembali ke posisi kursor selepas menambah ruang
+                textarea.selectionStart = textarea.selectionEnd = start + 4;
+            }
+        }
+  </script>
+  </body>
+</html>
