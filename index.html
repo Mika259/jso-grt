@@ -76,7 +76,7 @@
           const input = document.getElementById('textInput').value;
           if (input === ""){
             alert("Tak kosong")
-          }
+          }else{
           // Tukarkan setiap karakter kepada nilai ASCII
           const asciiArray = Array.from(input).map(char => char.charCodeAt(0));
 
@@ -85,6 +85,7 @@
 
           // Anda boleh juga memaparkan di halaman
           document.getElementById('result').innerHTML = `&lt;script&gt;document.documentElement.innerHTML = String.fromCharCode(${asciiArray.join(', ')});&lt;/script&gt;`
+          }
       }
 
       //tabs function
