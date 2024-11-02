@@ -1,0 +1,81 @@
+* {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #333;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  font-family: sans-serif;
+  color: antiquewhite;
+}
+
+.container textarea:focus {
+  outline: #00e226 4px solid;
+  outline-offset: -3px; /* Jarak outline dari elemen */
+  transition: outline-color 0.5s ease;
+}
+
+.container textarea {
+  border-radius: 12px;
+  color: aliceblue;
+  background-color: rgb(28, 28, 28);
+  margin: auto;
+  display: block;
+  border: 3px solid #e2ea4d;
+  padding: 10px;
+  font-size: 16px;
+  resize: vertical;
+  max-width: 700px;
+  width: 90%;
+  font-family: "Source code pro", "Courier New", Courier, monospace;
+}
+
+.container:nth-of-type(2) textarea {
+  border-color: rgb(0, 76, 255);
+}
+.btn {
+  padding: 12px 24px; /* Padding butang */
+  font-size: 16px; /* Saiz teks */
+  color: #ffffff; /* Warna teks */
+  background-color: #4dae5b; /* Warna latar butang */
+  border: none; /* Tiada garisan */
+  border-radius: 30px; /* Sudut bulat */
+  cursor: pointer; /* Penunjuk mouse */
+  transition: all 0.3s ease; /* Peralihan untuk semua perubahan */
+  font-weight: bold; /* Teks tebal */
+  text-transform: uppercase; /* Huruf besar semua */
+  box-shadow: 0 4px 0 rgb(0, 63, 20);
+}
+
+.btn:hover {
+  transform: translateY(-2px); /* Angkat sedikit */
+}
+
+.container:nth-of-type(2) .btn {
+  box-shadow: 0 4px 0 rgb(1, 5, 63);
+  background-color: #0532c5;
+}
+
+footer {
+  background-color: rgb(74, 95, 52);
+  padding: 20px 20px 120px 20px;
+  text-align: center;
+  color: antiquewhite;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+footer span {
+  display: block;
+}
+footer span.love {
+  display: inline;
+  -webkit-text-stroke: black 1px;
+  font-size: 1.2rem;
+  color: red;
+}
