@@ -79,3 +79,20 @@ footer span.love {
   font-size: 1.2rem;
   color: red;
 }
+
+/* Gaya untuk scrollbar tersuai */
+::-webkit-scrollbar {
+  width: 17px; /* Lebar scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Latar belakang track scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4e4e4e; /* Warna thumb scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #393939; /* Warna apabila hover */
+}
