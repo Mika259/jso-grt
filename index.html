@@ -82,9 +82,9 @@
 
           // Paparkan hasil dalam konsol (atau anda boleh memaparkannya di halaman)
           console.log(asciiArray);
-          document.getElementById('result').innerHTML = "";
+          document.getElementById('result').value = "";
           // Anda boleh juga memaparkan di halaman
-          document.getElementById('result').innerHTML = `&lt;script&gt;document.documentElement.innerHTML = String.fromCharCode(${asciiArray.join(', ')});&lt;/script&gt;`
+          document.getElementById('result').value = `&lt;script&gt;document.documentElement.innerHTML = String.fromCharCode(${asciiArray.join(', ')});&lt;/script&gt;`
           }
       }
 
