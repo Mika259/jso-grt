@@ -48,3 +48,20 @@ function handleTab(event) {
     textarea.selectionStart = textarea.selectionEnd = start + 4;
   }
 }
+
+document.body.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+});
+
+// Menonaktifkan pintasan keyboard untuk Developer Tools
+document.addEventListener("keydown", function (event) {
+  // Mencegah F12, Ctrl+Shift+I, Ctrl+Shift+J
+  if (
+    event.key === "F12" ||
+    (event.ctrlKey &&
+      event.shiftKey &&
+      (event.key === "I" || event.key === "J"))
+  ) {
+    event.preventDefault();
+  }
+});
