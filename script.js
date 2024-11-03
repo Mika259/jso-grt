@@ -65,3 +65,34 @@ document.addEventListener("keydown", function (event) {
     event.preventDefault();
   }
 });
+
+const contextMenu = document.getElementById("context-menu");
+
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+    const { clientX: mouseX, clientY: mouseY } = event;
+
+    contextMenu.style.top = `${mouseY}px`;
+    contextMenu.style.left = `${mouseX}px`;
+    contextMenu.style.display = "block";
+});
+
+document.addEventListener("click", function () {
+    contextMenu.style.display = "none";
+});
+
+function paste(){
+    if (navigator.clipboard){
+        navigator.clipboard.readText()
+        .then(text => {
+	    document.getElementById("textInput").value = text;
+	})
+	.catch(err => {
+	    console.log("Failed pasting :",err);
+	    alert("Error : browser not allow to pasting.")
+	})
+    }
+    else{
+	alert("Error : Browser not support paste api.")
+    }
+}
